@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon">
+        <img src="./assets/images/icon-success.svg" alt="thankyou" />
+      </div>
+      <h1>Thanks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to
+        <span id="email-Result">ash@loremcompany.com.</span> Please open it and
+        click the button inside to confirm your subscription.
+      </p>
+      <button id="btn">Dismiss message</button>
+    </div>
+
+    <script>
+      const emailResult = document.getElementById("email-Result");
+      const email = localStorage.getItem("email");
+      emailResult.innerHTML = email;
+
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
